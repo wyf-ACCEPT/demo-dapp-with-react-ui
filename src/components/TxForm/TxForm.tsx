@@ -10,14 +10,11 @@ const defaultTx: SendTransactionRequest = {
   // The transaction is valid for 10 minutes from now, in unix epoch seconds.
   validUntil: Math.floor(Date.now() / 1000) + 600,
   messages: [
-
     {
       // The receiver's address.
-      address: 'EQCKWpx7cNMpvmcN5ObM5lLUZHZRFKqYA4xmw9jOry0ZsF9M',
+      address: '0QBx602jCA5wjaPZjCcOVQa2W5yVZGPna7kSxZkOkalIU1Wi',
       // Amount to send in nanoTON. For example, 0.005 TON is 5000000 nanoTON.
-      amount: '5000000',
-      // (optional) State initialization in boc base64 format.
-      stateInit: 'te6cckEBBAEAOgACATQCAQAAART/APSkE/S88sgLAwBI0wHQ0wMBcbCRW+D6QDBwgBDIywVYzxYh+gLLagHPFsmAQPsAlxCarA==',
+      amount: '500',
       // (optional) Payload in boc base64 format.
       payload: 'te6ccsEBAQEADAAMABQAAAAASGVsbG8hCaTc/g==',
     },
@@ -35,11 +32,8 @@ const defaultTx: SendTransactionRequest = {
 };
 
 export function TxForm() {
-
   const [tx, setTx] = useState(defaultTx);
-
   const wallet = useTonWallet();
-
   const [tonConnectUi] = useTonConnectUI();
 
   const onChange = useCallback((value: InteractionProps) => {
